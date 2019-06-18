@@ -25,7 +25,7 @@ func StartLocate() {
 		if e != nil {
 			panic(e)
 		}
-		// 本节点存在则返回监听地址
+		// 本节点存在，则返回监听地址
 		if Locate(os.Getenv("STORAGE_ROOT") + "/objects/" + object) {
 			q.Send(msg.ReplyTo, os.Getenv("LISTEN_ADDRESS"))
 		}

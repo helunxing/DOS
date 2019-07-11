@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt-get install rabbitmq-server
 sudo rabbitmq-plugins enable rabbitmq_management
 wget localhost:15672/cli/rabbitmqadmin

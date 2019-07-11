@@ -2,7 +2,6 @@ package heartbeat
 
 import (
 	"lib/rabbitmq"
-	"math/rand"
 	"os"
 	"strconv"
 	"sync"
@@ -59,14 +58,4 @@ func GetDataServers() []string {
 		ds = append(ds, s)
 	}
 	return ds
-}
-
-//随机选择发送目的节点
-func ChooseRandomDataServer() string {
-	ds := GetDataServers()
-	n := len(ds)
-	if n == 0 {
-		return ""
-	}
-	return ds[rand.Intn(n)]
 }

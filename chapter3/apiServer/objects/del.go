@@ -15,6 +15,7 @@ func del(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+	// 资源标记为删除
 	e = es.PutMetadata(name, version.Version+1, 0, "")
 	if e != nil {
 		log.Println(e)

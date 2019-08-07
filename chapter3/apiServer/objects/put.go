@@ -16,7 +16,7 @@ func put(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
-
+	// 以hash值为文件名保存文件
 	c, e := storeObject(r.Body, url.PathEscape(hash))
 	if e != nil {
 		log.Println(e)
@@ -27,7 +27,7 @@ func put(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(c)
 		return
 	}
-
+	// 获取名字、大小存入es
 	name := strings.Split(r.URL.EscapedPath(), "/")[2]
 	size := utils.GetSizeFromHeader(r.Header)
 	e = es.AddVersion(name, hash, size)

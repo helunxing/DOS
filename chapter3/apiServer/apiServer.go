@@ -1,15 +1,17 @@
 package main
 
 import (
+	"log"
+	"net/http"
+	"os"
+
 	"./heartbeat"
 	"./locate"
 	"./objects"
 	"./versions"
-	"log"
-	"net/http"
-	"os"
 )
 
+// 增加了/versions
 func main() {
 	go heartbeat.ListenHeartbeat()
 	http.HandleFunc("/objects/", objects.Handler)

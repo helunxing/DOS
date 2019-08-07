@@ -2,6 +2,7 @@ package objects
 
 import "net/http"
 
+// 增加了delete方法
 func Handler(w http.ResponseWriter, r *http.Request) {
 	m := r.Method
 	if m == http.MethodPut {

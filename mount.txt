@@ -1,0 +1,1 @@
+sudo curlftpfs -o allow_other -o codepage=UTF-8 user:pwd@host/home/DOS ~/DOS
